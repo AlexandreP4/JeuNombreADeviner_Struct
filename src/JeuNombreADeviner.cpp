@@ -38,8 +38,8 @@ void InitJoueur(TJoueur& joueurAcreer, string un_nom)
 int TirerNombreMystere()
 {
     srand(time(NULL));
-    int OMyst = (rand() % (10 - 1 + 1)) + 1;
-    return OMyst;
+    int nombreADeviner = (rand() % (10 - 1 + 1)) + 1;
+    return nombreADeviner;
 }
 
 
@@ -48,12 +48,35 @@ int TirerNombreMystere()
 // R�le : Fait jouer une partie au joueur pass� en param�tre
 //        A la fin, met � jour les informations du joueur
 // Param�tres d'entr�e: nombreADeviner
-// Param�tres de sortie: NULL
-// Param�tres d'entr�e/sortie : joueur
+// Param�tres de sortie: joueur
+// Param�tres d'entr�e/sortie : NULL 
 
 void JouerPartie(TJoueur& un_joueur, int nombreADeviner)
 {
-    //A COMPLETER
+    int oTentative = 0;
+    int oInput;
+   do
+    {
+        oTentative += 1;
+        if (oTentative > 4)
+        {
+            cout << "Tu as fais trop de  tentatives !" <<endl;
+            cout << "Le  nombre etait " << nombreADeviner << endl;
+            break;
+        }
+        cout << "Quel est le nombre ? ";
+        cin >> oInput;
+        if (nombreADeviner > oInput)
+            cout << "C'est plus !\n\n";
+        else if (nombreADeviner < oInput)
+            cout << "C'est moins !\n\n";
+        else
+        {
+            cout << "\nTu as trouve le nombre mystere !\n";
+            cout << "Tu as fais " << oTentative << " tentatives !\n\n";
+        }
+    } while (oInput != nombreADeviner);
+    
 }
 
 
