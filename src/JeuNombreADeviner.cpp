@@ -1,10 +1,10 @@
 /*************************************************/
-// Nom du projet: Jeu du nombre à deviner
+// Nom du projet: Jeu du nombre ï¿½ deviner
 // Nom du fichier: JeuNombreADeviner.cpp
 // Version : 1.0
 // Nom du programmeur: MP Pinaud
-// Date de création : 25/01/2021
-// Rôle du fichier: Contient le code des fonctions du jeu
+// Date de crï¿½ation : 25/01/2021
+// Rï¿½le du fichier: Contient le code des fonctions du jeu
 // Nom des composants utilises: JeuNombreADeviner.h
 //                              iostream
 //                              ctime
@@ -13,37 +13,43 @@
 #include <iostream>
 using namespace std;
 #include "../include/JeuNombreAdeviner.h"
+#include <ctime>
 
 // Nom :InitJoueur
-// Rôle : Crée un joueur. Initialise toutes les informations du joueur.
-//        Le nombre de tentatives, de parties gagnées et de parties jouées seront à 0.
-// Paramètres d'entrée :
-// Paramètres de sortie :
-// Paramètres d'entrée/sortie :
+// Rï¿½le : Crï¿½e un joueur. Initialise toutes les informations du joueur.
+//        Le nombre de tentatives, de parties gagnï¿½es et de parties jouï¿½es seront ï¿½ 0.
+// Paramï¿½tres d'entrï¿½e : nom du joueur
+// Paramï¿½tres de sortie : joueurAcreer
+// Paramï¿½tres d'entrï¿½e/sortie : NULL
 
 void InitJoueur(TJoueur& joueurAcreer, string un_nom)
 {
-    //A COMPLETER
+    joueurAcreer.nom = un_nom;
+    joueurAcreer.nbPartiesGagnees = 0;
+    joueurAcreer.nbPartiesJouees = 0;
+    joueurAcreer.nbTentatives = 0;
 }
 
 
 // Nom :TirerNombreMystere
-// Rôle : Tire aléatoirement un nombre à deviner entre 0 et 10
-// Valeur de retour : nombre à deviner
+// Rï¿½le : Tire alï¿½atoirement un nombre ï¿½ deviner entre 0 et 10
+// Valeur de retour : nombre ï¿½ deviner
 
 int TirerNombreMystere()
 {
-    //A COMPLETER
-        return -1;
+    srand(time(NULL));
+    int OMyst = (rand() % (10 - 1 + 1)) + 1;
+    return OMyst;
 }
 
 
+
 // Nom :JouerPartie
-// Rôle : Fait jouer une partie au joueur passé en paramètre
-//        A la fin, met à jour les informations du joueur
-// Paramètres d'entrée:
-// Paramètres de sortie:
-// Paramètres d'entrée/sortie :
+// Rï¿½le : Fait jouer une partie au joueur passï¿½ en paramï¿½tre
+//        A la fin, met ï¿½ jour les informations du joueur
+// Paramï¿½tres d'entrï¿½e: nombreADeviner
+// Paramï¿½tres de sortie: NULL
+// Paramï¿½tres d'entrï¿½e/sortie : joueur
 
 void JouerPartie(TJoueur& un_joueur, int nombreADeviner)
 {
@@ -52,23 +58,23 @@ void JouerPartie(TJoueur& un_joueur, int nombreADeviner)
 
 
 // Nom : MajResultatsJoueur
-// Rôle : met à jour les informations du joueur passé en paramètre
-// Paramètres d'entrée:
-// Paramètres de sortie:
-// Paramètres d'entrée/sortie :
+// Rï¿½le : met ï¿½ jour les informations du joueur passï¿½ en paramï¿½tre
+// Paramï¿½tres d'entrï¿½e: nbEssais et gagne
+// Paramï¿½tres de sortie: NULL
+// Paramï¿½tres d'entrï¿½e/sortie : joueur
 
-void MajResultatsJoueur(TJoueur joueur, int nbEssais, bool gagne)
+void MajResultatsJoueur(TJoueur &joueur, int nbEssais, bool gagne)
 {
    // A COMPLETER
 }
 
 // Nom : ResultatsJoueur
-// Rôle : indique les résultats du joueur passé en paramètre
-//        le nombre de parties gagnées, le nombre de parties perdues, le nombre d'essais total
-//        La fonction N'affiche PAS les informations à l'écran
-// Paramètres d'entrée:
-// Paramètres de sortie:
-// Paramètres d'entrée/sortie :
+// Rï¿½le : indique les rï¿½sultats du joueur passï¿½ en paramï¿½tre
+//        le nombre de parties gagnï¿½es, le nombre de parties perdues, le nombre d'essais total
+//        La fonction N'affiche PAS les informations ï¿½ l'ï¿½cran
+// Paramï¿½tres d'entrï¿½e: joueur
+// Paramï¿½tres de sortie: nbsucces, nbechec, nbessais
+// Paramï¿½tres d'entrï¿½e/sortie : 
 
 void ResultatsJoueur(TJoueur joueur, int& nbsucces, int& nbechec, int& nbessais)
 {
@@ -76,8 +82,8 @@ void ResultatsJoueur(TJoueur joueur, int& nbsucces, int& nbechec, int& nbessais)
 }
 
 // Nom :Nom
-// Rôle : retourne le nom du joueur
-// Paramètres d'entrée: le joueur dont on veut le nom
+// Rï¿½le : retourne le nom du joueur
+// Paramï¿½tres d'entrï¿½e: le joueur dont on veut le nom
 // Valeur de retour : nom du joueur
 
 string Nom(TJoueur joueur){
