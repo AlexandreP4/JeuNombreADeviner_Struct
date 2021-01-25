@@ -32,4 +32,4 @@
 *.app
 
 #VSCode
-.code-workspace
+workspace.code-workspace
