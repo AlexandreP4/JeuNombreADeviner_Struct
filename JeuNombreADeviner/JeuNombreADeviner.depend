@@ -21,3 +21,15 @@
 	<iostream>
 	"../include/JeuNombreADeviner.h"
 
+1611611997 source:c:\users\alexa\documents\cours\informatique & réseau\pinaud m\c++\jeunombreadeviner_struct\src\jeunombreadeviner.cpp
+	<iostream>
+	"../include/JeuNombreAdeviner.h"
+	<ctime>
+
+1611590937 c:\users\alexa\documents\cours\informatique & réseau\pinaud m\c++\jeunombreadeviner_struct\include\jeunombreadeviner.h
+	<string>
+
+1611609623 source:c:\users\alexa\documents\cours\informatique & réseau\pinaud m\c++\jeunombreadeviner_struct\src\mainjeunombreadeviner.cpp
+	<iostream>
+	"../include/JeuNombreADeviner.h"
+

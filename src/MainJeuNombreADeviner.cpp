@@ -16,7 +16,6 @@ using namespace std;
 int main()
 {
     cout << "Vous allez jouer pour deviner un nombre secret" << endl;
-
     return 0;
 }
 
