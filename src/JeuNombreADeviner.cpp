@@ -18,7 +18,7 @@ using namespace std;
 // Nom :InitJoueur
 // R�le : Cr�e un joueur. Initialise toutes les informations du joueur.
 //        Le nombre de tentatives, de parties gagn�es et de parties jou�es seront � 0.
-// Param�tres d'entr�e : nom du joueur
+// Param�tres d'entr�e : un_nom
 // Param�tres de sortie : joueurAcreer
 // Param�tres d'entr�e/sortie : NULL
 
@@ -74,17 +74,19 @@ void JouerPartie(TJoueur& un_joueur, int nombreADeviner)
         {
             cout << "\nTu as trouve le nombre mystere !\n";
             cout << "Tu as fais " << oTentative << " tentatives !\n\n";
+            un_joueur.nbPartiesGagnees += 1;
         }
     } while (oInput != nombreADeviner);
-    
+    un_joueur.nbTentatives += oTentative;
+    un_joueur.nbPartiesJouees += 1;
 }
 
 
 // Nom : MajResultatsJoueur
 // R�le : met � jour les informations du joueur pass� en param�tre
 // Param�tres d'entr�e: nbEssais et gagne
-// Param�tres de sortie: NULL
-// Param�tres d'entr�e/sortie : joueur
+// Param�tres de sortie: joueur
+// Param�tres d'entr�e/sortie : NULL
 
 void MajResultatsJoueur(TJoueur &joueur, int nbEssais, bool gagne)
 {
