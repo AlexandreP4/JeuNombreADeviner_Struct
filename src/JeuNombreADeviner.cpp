@@ -117,6 +117,35 @@ void ResultatsJoueur(TJoueur joueur, int& nbsucces, int& nbechec, int& nbessais)
     nbessais = joueur.nbTentatives;
 }
 
+// Nom : AfficheResultatsJoueur
+// R�le : Affiche les r�sultats du joueur pass� en param�tre
+//        La fonction affiche les informations � l'�cran au format:
+//        Victoire : XX
+//        Echec : XX
+//        Tentatives : XX
+// Param�tres d'entr�e: joueur
+// Param�tres de sortie: NULL
+// Param�tres d'entr�e/sortie : NULL
+
+void AfficheResultatsJoueur(TJoueur joueur){
+    int oSucces, oEchec, oEssais;
+    ResultatsJoueur(joueur, oSucces, oEchec, oEssais);
+    cout << "Victoire : " << oSucces << endl;
+    cout << "Echec : " << oEchec << endl;
+    cout << "Tentatives : " << oEssais << endl;
+}
+
+// Nom :WhoAmI
+// R�le : demande et retourne le nom qu'un joueur a donnée
+// Valeur de retour : nom du joueur
+
+string WhoAmI(){
+    string oName;
+    cout << "Qui es-tu ?" << endl;
+    cin >> oName;
+    return oName;
+}
+
 // Nom :Nom
 // R�le : retourne le nom du joueur
 // Param�tres d'entr�e: le joueur dont on veut le nom

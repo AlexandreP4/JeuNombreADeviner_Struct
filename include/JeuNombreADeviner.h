@@ -72,6 +72,23 @@ void MajResultatsJoueur(TJoueur &joueur, int nbEssais, bool gagne);
 
 void ResultatsJoueur(TJoueur joueur, int &nbsucces, int &nbechec, int & nbessais);
 
+// Nom : AfficheResultatsJoueur
+// R�le : Affiche les r�sultats du joueur pass� en param�tre
+//        La fonction affiche les informations � l'�cran au format:
+//        Victoire : XX
+//        Echec : XX
+//        Tentatives : XX
+// Param�tres d'entr�e: joueur
+// Param�tres de sortie: NULL
+// Param�tres d'entr�e/sortie : NULL
+
+void AfficheResultatsJoueur(TJoueur joueur);
+
+// Nom :WhoAmI
+// R�le : demande et retourne le nom qu'un joueur a donnée
+// Valeur de retour : nom du joueur
+
+string WhoAmI();
 
 // Nom :Nom
 // R�le : retourne le nom du joueur
