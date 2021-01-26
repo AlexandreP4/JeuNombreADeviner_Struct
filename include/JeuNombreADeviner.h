@@ -89,7 +89,7 @@ void AfficheResultatsJoueur(TJoueur joueur);
 // Valeur de retour : nom du joueur
 
 string WhoAmI();
-
+ 
 // Nom :Nom
 // R�le : retourne le nom du joueur
 // Param�tres d'entr�e: le joueur dont on veut le nom

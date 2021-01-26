@@ -15,7 +15,26 @@ using namespace std;
 
 int main()
 {
-    cout << "Vous allez jouer pour deviner un nombre secret" << endl;
+    /**Init joueur**/
+    TJoueur joueur;
+    InitJoueur(joueur, WhoAmI());
+    cout << endl; //Pour faire jolie
+
+    /**Start game**/
+    cout << joueur.nom << ", tu vas jouer pour deviner un nombre secret \n" << endl;
+
+    /**Game**/
+    char oGame = 'N';
+    do
+    {  
+        JouerPartie(joueur, TirerNombreMystere());
+        cout << "Veux-tu rejouer ? y/N" << endl;
+        cin >> oGame;
+        cout << endl; //Pour faire jolie
+    } while (oGame == 'y');
+    
+    /**End game**/
+    AfficheResultatsJoueur(joueur);
     return 0;
 }
 
