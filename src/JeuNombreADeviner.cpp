@@ -90,7 +90,16 @@ void JouerPartie(TJoueur& un_joueur, int nombreADeviner)
 
 void MajResultatsJoueur(TJoueur &joueur, int nbEssais, bool gagne)
 {
-   // A COMPLETER
+   if (gagne)
+   {
+       joueur.nbPartiesJouees += 1;
+       joueur.nbPartiesGagnees += 1;
+       joueur.nbTentatives += nbEssais;
+   }else
+   {
+       joueur.nbPartiesJouees += 1;
+       joueur.nbTentatives += nbEssais;
+   }
 }
 
 // Nom : ResultatsJoueur
