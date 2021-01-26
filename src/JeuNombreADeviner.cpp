@@ -55,6 +55,7 @@ void JouerPartie(TJoueur& un_joueur, int nombreADeviner)
 {
     int oTentative = 0;
     int oInput;
+    bool oVictoire = false;
    do
     {
         oTentative += 1;
@@ -74,11 +75,10 @@ void JouerPartie(TJoueur& un_joueur, int nombreADeviner)
         {
             cout << "\nTu as trouve le nombre mystere !\n";
             cout << "Tu as fais " << oTentative << " tentatives !\n\n";
-            un_joueur.nbPartiesGagnees += 1;
+            oVictoire = true;
         }
     } while (oInput != nombreADeviner);
-    un_joueur.nbTentatives += oTentative;
-    un_joueur.nbPartiesJouees += 1;
+    MajResultatsJoueur(un_joueur, oTentative, oVictoire);
 }
 
 
