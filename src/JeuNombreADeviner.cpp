@@ -99,11 +99,13 @@ void MajResultatsJoueur(TJoueur &joueur, int nbEssais, bool gagne)
 //        La fonction N'affiche PAS les informations � l'�cran
 // Param�tres d'entr�e: joueur
 // Param�tres de sortie: nbsucces, nbechec, nbessais
-// Param�tres d'entr�e/sortie : 
+// Param�tres d'entr�e/sortie : NULL
 
 void ResultatsJoueur(TJoueur joueur, int& nbsucces, int& nbechec, int& nbessais)
 {
-    // A COMPLETER
+    nbsucces = joueur.nbPartiesGagnees;
+    nbechec = joueur.nbPartiesJouees-joueur.nbPartiesGagnees;
+    nbessais = joueur.nbTentatives;
 }
 
 // Nom :Nom
