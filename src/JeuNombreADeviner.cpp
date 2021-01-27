@@ -49,7 +49,7 @@ int TirerNombreMystere()
 //        A la fin, met � jour les informations du joueur
 // Param�tres d'entr�e: nombreADeviner
 // Param�tres de sortie: joueur
-// Param�tres d'entr�e/sortie : NULL 
+// Param�tres d'entr�e/sortie : NULL
 
 void JouerPartie(TJoueur& un_joueur, int nombreADeviner)
 {
@@ -172,28 +172,26 @@ void CreationDesJoueurs(TJoueur joueur[], int nombreDeJoueur){
 
 // Nom : WhoWin
 // R�le : Retourne le joueur gagant
-// Param�tres d'entr�e: joueur[], nb de joueur
-// Param�tres d'entr�e/sortie : NULL
+// Param�tres d'entr�e: joueur[], Nombre de joueur, Nombre de joueur donnée a la fonction
+// Param�tres de sortie: liste de joueur à égalité
 
-string WhoWin(TJoueur joueur[], int nombreDeJoueur){
-    TJoueur Winner;
-    InitJoueur(Winner, "Winner");
-
-    for (int i = 0; i < nombreDeJoueur; i++)
+void WhoWin(TJoueur joueur,int nombreDeJoueur, int nombreUtilisation, TJoueur Winner[]){
+    TJoueur blanc;
+    InitJoueur(blanc, "");
+    for (int i = 0 + nombreUtilisation; i < nombreDeJoueur ; i++)
     {
-        if (joueur[i].nbPartiesGagnees > Winner.nbPartiesGagnees)
-        {
-            Winner = joueur[i];       
-        }else if (joueur[i].nbPartiesGagnees == Winner.nbPartiesGagnees)
-        {
-            if (joueur[i].nbTentatives < Winner.nbTentatives)
-            {
-                Winner = joueur[i];
-            }else if (joueur[i].nbTentatives == Winner.nbTentatives)
-            {
-                cout << "eeeeeuh" << endl;
-            }
-        }
+        Winner[i] = blanc;
     }
-    return Nom(Winner);
+    
+    if ((joueur.nbPartiesGagnees > Winner[0].nbPartiesGagnees) ^ ((joueur.nbPartiesGagnees == Winner[0].nbPartiesGagnees) && (joueur.nbTentatives < Winner[0].nbTentatives)))
+    {
+        for (int i = 0; i < nombreDeJoueur ; i++)
+        {
+            Winner[i] = blanc;
+        }
+        Winner[0] = joueur;
+    }else if (((joueur.nbPartiesGagnees == Winner[0].nbPartiesGagnees) && (joueur.nbTentatives == Winner[0].nbTentatives)))
+    {
+        Winner[nombreUtilisation] = joueur;
+    }
 }

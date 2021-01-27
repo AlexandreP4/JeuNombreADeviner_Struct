@@ -107,7 +107,7 @@ void CreationDesJoueurs(TJoueur joueur[], int nombreDeJoueur);
 
 // Nom : WhoWin
 // R�le : Retourne le joueur gagant
-// Param�tres d'entr�e: joueur[], nb de joueur
-// Param�tres d'entr�e/sortie : 
+// Param�tres d'entr�e: joueur[], Nombre de joueur, Nombre de joueur donnée a la fonction
+// Param�tres de sortie: liste de joueur à égalité
 
-string WhoWin(TJoueur joueur[], int nombreDeJoueur);
+void WhoWin(TJoueur joueur, int nombreDeJoueur, int nombreUtilisation, TJoueur Winner[]);
