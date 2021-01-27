@@ -22,7 +22,7 @@ int main()
 
     /**Init Joueur**/
     TJoueur joueur[nombreDeJoueur];
-    cout << endl;
+    cout << endl; //Pour faire jolie
     CreationDesJoueurs(joueur, nombreDeJoueur);
     cout << endl; //Pour faire jolie
 
@@ -45,6 +45,18 @@ int main()
     {
         AfficheResultatsJoueur(joueur[i]);
         cout << "--------------" << endl; //Pour faire jolie
+    }
+
+    TJoueur Winner[nombreDeJoueur];
+    for (int y = 0; y < nombreDeJoueur; y++)
+    {
+        WhoWin(joueur[y], nombreDeJoueur, y, Winner);
+    }
+
+    cout << "Victoire pour ";
+    for (int y = 0; y < nombreDeJoueur; y++)
+    {
+        cout << Winner[y].nom << " ";
     }
     
     return 0;
