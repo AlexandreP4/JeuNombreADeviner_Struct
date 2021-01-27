@@ -103,6 +103,11 @@ string Nom(TJoueur joueur);
 // Param�tres d'entr�e: nb de joueur
 // Param�tres d'entr�e/sortie : joueur[]
 
-void CreationDesJoueurs(TJoueur joueur[], int count);
+void CreationDesJoueurs(TJoueur joueur[], int nombreDeJoueur);
 
+// Nom : WhoWin
+// R�le : Retourne le joueur gagant
+// Param�tres d'entr�e: joueur[], nb de joueur
+// Param�tres d'entr�e/sortie : 
 
+string WhoWin(TJoueur joueur[], int nombreDeJoueur);

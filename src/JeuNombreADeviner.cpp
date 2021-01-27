@@ -163,9 +163,37 @@ string Nom(TJoueur joueur){
 // Param�tres d'entr�e: nb de joueur
 // Param�tres d'entr�e/sortie : joueur[]
 
-void CreationDesJoueurs(TJoueur joueur[], int count){
-    for (int i = 0; i < count; i++)
+void CreationDesJoueurs(TJoueur joueur[], int nombreDeJoueur){
+    for (int i = 0; i < nombreDeJoueur; i++)
     {
         InitJoueur(joueur[i], WhoAmI(i+1));
     }
+}
+
+// Nom : WhoWin
+// R�le : Retourne le joueur gagant
+// Param�tres d'entr�e: joueur[], nb de joueur
+// Param�tres d'entr�e/sortie : NULL
+
+string WhoWin(TJoueur joueur[], int nombreDeJoueur){
+    TJoueur Winner;
+    InitJoueur(Winner, "Winner");
+
+    for (int i = 0; i < nombreDeJoueur; i++)
+    {
+        if (joueur[i].nbPartiesGagnees > Winner.nbPartiesGagnees)
+        {
+            Winner = joueur[i];       
+        }else if (joueur[i].nbPartiesGagnees == Winner.nbPartiesGagnees)
+        {
+            if (joueur[i].nbTentatives < Winner.nbTentatives)
+            {
+                Winner = joueur[i];
+            }else if (joueur[i].nbTentatives == Winner.nbTentatives)
+            {
+                cout << "eeeeeuh" << endl;
+            }
+        }
+    }
+    return Nom(Winner);
 }
