@@ -15,26 +15,38 @@ using namespace std;
 
 int main()
 {
-    /**Init joueur**/
-    TJoueur joueur;
-    InitJoueur(joueur, WhoAmI());
-    cout << endl; //Pour faire jolie
+    /**Init Game**/
+    int nombreDeJoueur;
+    cout << "Nombre de Joueur : ";
+    cin >> nombreDeJoueur;
 
-    /**Start game**/
-    cout << joueur.nom << ", tu vas jouer pour deviner un nombre secret \n" << endl;
+    /**Init Joueur**/
+    TJoueur joueur[nombreDeJoueur];
+    cout << endl;
+    CreationDesJoueurs(joueur, nombreDeJoueur);
+    cout << endl; //Pour faire jolie
 
     /**Game**/
     char oGame = 'N';
     do
     {  
-        JouerPartie(joueur, TirerNombreMystere());
-        cout << "Veux-tu rejouer ? y/N" << endl;
+        for (int i = 0; i < nombreDeJoueur; i++)
+        {
+            cout << Nom(joueur[i]) << ", tu vas jouer pour deviner un nombre secret \n" << endl;
+            JouerPartie(joueur[i], TirerNombreMystere());  
+        }
+        cout << "Voulez-vous rejouer ? y/N" << endl;
         cin >> oGame;
         cout << endl; //Pour faire jolie
     } while (oGame == 'y');
     
     /**End game**/
-    AfficheResultatsJoueur(joueur);
+    for (int i = 0; i < nombreDeJoueur; i++)
+    {
+        AfficheResultatsJoueur(joueur[i]);
+        cout << "--------------" << endl; //Pour faire jolie
+    }
+    
     return 0;
 }
 
