@@ -62,7 +62,7 @@ void JouerPartie(TJoueur& un_joueur, int nombreADeviner)
         if (oTentative > 4)
         {
             cout << "Tu as fais trop de  tentatives !" <<endl;
-            cout << "Le  nombre etait " << nombreADeviner << endl;
+            cout << "Le  nombre etait " << nombreADeviner << "\n" << endl;
             break;
         }
         cout << "Quel est le nombre ? ";
@@ -130,6 +130,7 @@ void ResultatsJoueur(TJoueur joueur, int& nbsucces, int& nbechec, int& nbessais)
 void AfficheResultatsJoueur(TJoueur joueur){
     int oSucces, oEchec, oEssais;
     ResultatsJoueur(joueur, oSucces, oEchec, oEssais);
+    cout << "Joueur : " << joueur.nom << endl;
     cout << "Victoire : " << oSucces << endl;
     cout << "Echec : " << oEchec << endl;
     cout << "Tentatives : " << oEssais << endl;
@@ -137,11 +138,12 @@ void AfficheResultatsJoueur(TJoueur joueur){
 
 // Nom :WhoAmI
 // R�le : demande et retourne le nom qu'un joueur a donnée
+// Param�tres d'entr�e: numeroDuJoueur
 // Valeur de retour : nom du joueur
 
-string WhoAmI(){
+string WhoAmI(int numeroDuJoueur){
     string oName;
-    cout << "Qui es-tu ?" << endl;
+    cout << "Playeur " << numeroDuJoueur << " : ";
     cin >> oName;
     return oName;
 }
@@ -156,3 +158,14 @@ string Nom(TJoueur joueur){
     return joueur.nom;
 }
 
+// Nom : CreationDesJoueurs
+// R�le : Crée n joueur
+// Param�tres d'entr�e: nb de joueur
+// Param�tres d'entr�e/sortie : joueur[]
+
+void CreationDesJoueurs(TJoueur joueur[], int count){
+    for (int i = 0; i < count; i++)
+    {
+        InitJoueur(joueur[i], WhoAmI(i+1));
+    }
+}

@@ -86,9 +86,10 @@ void AfficheResultatsJoueur(TJoueur joueur);
 
 // Nom :WhoAmI
 // R�le : demande et retourne le nom qu'un joueur a donnée
+// Param�tres d'entr�e: numeroDuJoueur
 // Valeur de retour : nom du joueur
 
-string WhoAmI();
+string WhoAmI(int numeroDuJoueur);
  
 // Nom :Nom
 // R�le : retourne le nom du joueur
@@ -96,5 +97,12 @@ string WhoAmI();
 // Valeur de retour : nom du joueur
 
 string Nom(TJoueur joueur);
+
+// Nom : CreationDesJoueurs
+// R�le : Crée n joueur
+// Param�tres d'entr�e: nb de joueur
+// Param�tres d'entr�e/sortie : joueur[]
+
+void CreationDesJoueurs(TJoueur joueur[], int count);
 
 
