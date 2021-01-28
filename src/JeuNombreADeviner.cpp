@@ -178,11 +178,11 @@ void CreationDesJoueurs(TJoueur joueur[], int nombreDeJoueur){
 void WhoWin(TJoueur joueur,int nombreDeJoueur, int nombreUtilisation, TJoueur Winner[]){
     TJoueur blanc;
     InitJoueur(blanc, "");
-    for (int i = 0 + nombreUtilisation; i < nombreDeJoueur ; i++)
+    for (int i = 0 + nombreUtilisation; i < nombreDeJoueur+1 ; i++)
     {
         Winner[i] = blanc;
     }
-    
+
     if ((joueur.nbPartiesGagnees > Winner[0].nbPartiesGagnees) ^ ((joueur.nbPartiesGagnees == Winner[0].nbPartiesGagnees) && (joueur.nbTentatives < Winner[0].nbTentatives)))
     {
         for (int i = 0; i < nombreDeJoueur ; i++)
@@ -194,4 +194,26 @@ void WhoWin(TJoueur joueur,int nombreDeJoueur, int nombreUtilisation, TJoueur Wi
     {
         Winner[nombreUtilisation] = joueur;
     }
+}
+
+// Nom : ClearTable
+// R�le : Donne une liste propre de joueur gagant
+// Param�tres d'entr�e: Nombre de joueur
+// Param�tres d'entr�e/sortie: Winner[]
+
+void ClearTable(TJoueur Winner[], int nombreDeJoueur){
+    int y = 0;
+    for (int i = 0; i < nombreDeJoueur; i++)
+    {
+        if (Winner[i].nom != "")
+        {
+            y++;
+        }else
+        {
+            for (int z = y; z    < nombreDeJoueur; z++)
+            {
+                Winner[z] = Winner[z+1];
+            }
+        }
+    }    
 }
