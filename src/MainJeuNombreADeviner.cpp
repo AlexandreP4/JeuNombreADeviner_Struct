@@ -17,17 +17,18 @@ int main()
 {
     /**Init Game**/
     int nombreDeJoueur;
+    char oGame = 'N';
     cout << "Nombre de Joueur : ";
     cin >> nombreDeJoueur;
+    TJoueur joueur[nombreDeJoueur];
+    TJoueur Winner[nombreDeJoueur];
 
     /**Init Joueur**/
-    TJoueur joueur[nombreDeJoueur];
     cout << endl; //Pour faire jolie
     CreationDesJoueurs(joueur, nombreDeJoueur);
     cout << endl; //Pour faire jolie
 
     /**Game**/
-    char oGame = 'N';
     do
     {  
         for (int i = 0; i < nombreDeJoueur; i++)
@@ -47,26 +48,18 @@ int main()
         cout << "--------------" << endl; //Pour faire jolie
     }
 
-    TJoueur Winner[nombreDeJoueur+1];
     for (int y = 0; y < nombreDeJoueur; y++)
     {
         WhoWin(joueur[y], nombreDeJoueur, y, Winner);
     }
-
-    cout << "Victoire pour ";
-    for (int y = 0; y < nombreDeJoueur; y++)
-    {
-        cout << Winner[y].nom << " ";
-    }
-
     ClearTable(Winner, nombreDeJoueur);
 
+    cout << endl; //Pour faire jolie
     cout << "Victoire pour ";
     for (int y = 0; y < nombreDeJoueur; y++)
     {
         cout << Winner[y].nom << " ";
     }
-
     return 0;
 }
 

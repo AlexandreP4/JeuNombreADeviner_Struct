@@ -21,7 +21,7 @@
 	<iostream>
 	"../include/JeuNombreADeviner.h"
 
-1611821479 source:c:\users\alexa\documents\cours\informatique & réseau\pinaud m\c++\jeunombreadeviner_struct\src\jeunombreadeviner.cpp
+1611825839 source:c:\users\alexa\documents\cours\informatique & réseau\pinaud m\c++\jeunombreadeviner_struct\src\jeunombreadeviner.cpp
 	<iostream>
 	"../include/JeuNombreAdeviner.h"
 	<ctime>
@@ -29,7 +29,7 @@
 1611820105 c:\users\alexa\documents\cours\informatique & réseau\pinaud m\c++\jeunombreadeviner_struct\include\jeunombreadeviner.h
 	<string>
 
-1611821221 source:c:\users\alexa\documents\cours\informatique & réseau\pinaud m\c++\jeunombreadeviner_struct\src\mainjeunombreadeviner.cpp
+1611825805 source:c:\users\alexa\documents\cours\informatique & réseau\pinaud m\c++\jeunombreadeviner_struct\src\mainjeunombreadeviner.cpp
 	<iostream>
 	"../include/JeuNombreADeviner.h"
 
