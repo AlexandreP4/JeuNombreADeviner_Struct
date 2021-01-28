@@ -47,7 +47,7 @@ int main()
         cout << "--------------" << endl; //Pour faire jolie
     }
 
-    TJoueur Winner[nombreDeJoueur];
+    TJoueur Winner[nombreDeJoueur+1];
     for (int y = 0; y < nombreDeJoueur; y++)
     {
         WhoWin(joueur[y], nombreDeJoueur, y, Winner);
@@ -58,7 +58,15 @@ int main()
     {
         cout << Winner[y].nom << " ";
     }
-    
+
+    ClearTable(Winner, nombreDeJoueur);
+
+    cout << "Victoire pour ";
+    for (int y = 0; y < nombreDeJoueur; y++)
+    {
+        cout << Winner[y].nom << " ";
+    }
+
     return 0;
 }
 
