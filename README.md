@@ -2,4 +2,6 @@
 Jeu du nombre à deviner en langage C
 
 ## To Do
-* Fix bug Fonction ClearTable
+* Add gestion d'error
+    *Nombre de Joueur
+    *JoueurPartie -> oInput
