@@ -178,7 +178,7 @@ void CreationDesJoueurs(TJoueur joueur[], int nombreDeJoueur){
 void WhoWin(TJoueur joueur,int nombreDeJoueur, int nombreUtilisation, TJoueur Winner[]){
     TJoueur blanc;
     InitJoueur(blanc, "");
-    for (int i = 0 + nombreUtilisation; i < nombreDeJoueur+1 ; i++)
+    for (int i = 0 + nombreUtilisation; i < nombreDeJoueur ; i++)
     {
         Winner[i] = blanc;
     }
@@ -203,17 +203,18 @@ void WhoWin(TJoueur joueur,int nombreDeJoueur, int nombreUtilisation, TJoueur Wi
 
 void ClearTable(TJoueur Winner[], int nombreDeJoueur){
     int y = 0;
+    TJoueur blanc;
+    InitJoueur(blanc, "");
     for (int i = 0; i < nombreDeJoueur; i++)
     {
         if (Winner[i].nom != "")
         {
+            Winner[y] = Winner[i];
             y++;
-        }else
-        {
-            for (int z = y; z    < nombreDeJoueur; z++)
-            {
-                Winner[z] = Winner[z+1];
-            }
         }
-    }    
+    }
+    for (int i = y; i < nombreDeJoueur; i++)
+    {
+        Winner[i] = blanc;
+    }
 }
