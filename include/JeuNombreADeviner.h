@@ -2,7 +2,7 @@
 // Nom du projet: Jeu du nombre � deviner
 // Nom du fichier: JeuNombreADeviner.h
 // Version : 1.0
-// Nom du programmeur: MP Pinaud
+// Nom du programmeur: MP Pinaud & A Parrat
 // Date de cr�ation : 25/01/2021
 // R�le du fichier: Contient la d�claration du type pour repr�senter un joueur
 // et les fonctions concernant le jeu

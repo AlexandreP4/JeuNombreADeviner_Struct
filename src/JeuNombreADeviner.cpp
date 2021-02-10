@@ -2,7 +2,7 @@
 // Nom du projet: Jeu du nombre � deviner
 // Nom du fichier: JeuNombreADeviner.cpp
 // Version : 1.0
-// Nom du programmeur: MP Pinaud
+// Nom du programmeur: MP Pinaud & A Parrat
 // Date de cr�ation : 25/01/2021
 // R�le du fichier: Contient le code des fonctions du jeu
 // Nom des composants utilises: JeuNombreADeviner.h
